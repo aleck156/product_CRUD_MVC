@@ -18,8 +18,6 @@ $router->post('/products/create', [ProductController::class, 'create']);
 $router->get('/products/update', [ProductController::class, 'update']);
 $router->post('/products/update', [ProductController::class, 'update']);
 
-$router->get('/products/delete', [ProductController::class, 'delete']);
 $router->post('/products/delete', [ProductController::class, 'delete']);
 
-$router->get('/', [ProductController::class, 'index']);
 ?>
