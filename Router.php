@@ -15,7 +15,9 @@ class Router{
   }
 
   public function resolve(){
-
+    echo "<pre>";
+    var_dump($_SERVER);
+    echo "</pre>"."\n<br>";
   }
 }
 
