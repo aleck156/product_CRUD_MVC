@@ -8,3 +8,7 @@ vendor
 images
 public/images/
 images/
+
+### Composer ###
+composer.phar
+/vendor/
