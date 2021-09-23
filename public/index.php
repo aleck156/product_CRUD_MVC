@@ -20,4 +20,5 @@ $router->post('/products/update', [ProductController::class, 'update']);
 
 $router->post('/products/delete', [ProductController::class, 'delete']);
 
+$router->resolve();
 ?>
