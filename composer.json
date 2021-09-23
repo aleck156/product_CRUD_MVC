@@ -1,15 +1,16 @@
 {
-    "name": "railgun/crud_2",
-    "autoload": {
-        "psr-4": {
-            "Railgun\\Crud2\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Aleksander Jaworski",
-            "email": "aleck156@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "railgun/crud_2",
+  "autoload": {
+    "psr-4": {
+      "Railgun\\Crud2\\": "src/",
+      "app\\": "./"
+    }
+  },
+  "authors": [
+    {
+      "name": "Aleksander Jaworski",
+      "email": "aleck156@gmail.com"
+    }
+  ],
+  "require": {}
 }
