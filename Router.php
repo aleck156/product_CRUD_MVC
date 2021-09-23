@@ -7,7 +7,7 @@ class Router{
   public array $postRoutes = [];
 
   public function get($url, $fn){
-    $this->getRouter[$url] = $fn;
+    $this->getRoutes[$url] = $fn;
   }
 
   public function post($url, $fn){
