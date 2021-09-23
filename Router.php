@@ -16,6 +16,7 @@ class Router{
 
   public function resolve(){
     $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+    $method = $_SERVER['CURRENT_METHOD'];
   }
 }
 
