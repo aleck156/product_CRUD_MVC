@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-class MainController {
+class ProductController {
   
 }
 
