@@ -9,4 +9,7 @@ use app\controllers\ProductController;
 
 $router = new Router();
 $router->get('/', [ProductController::class, 'index']);
+$router->get('/', [ProductController::class, 'index']);
+$router->get('/', [ProductController::class, 'index']);
+$router->get('/', [ProductController::class, 'index']);
 ?>
