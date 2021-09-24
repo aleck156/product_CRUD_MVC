@@ -28,7 +28,7 @@ class Router{
       echo "404: Page not found!";
       exit;
     }
-    call_user_func($fn);
+    call_user_func($fn, $this);
   }
 
   public function renderView($view)
