@@ -19,14 +19,18 @@ class Router{
     $method = $_SERVER['REQUEST_METHOD'];
 
     if ($method === 'GET'){
-      $fn = $this->getRoutes[$currentUrl];
+      $fn = $this->getRoutes[$currentUrl] ?? null;
     } else {
-      $fn = $this->postRoutes[$currentUrl];
+      $fn = $this->postRoutes[$currentUrl] ?? null;
     }
 
-    echo "<pre>";
-    var_dump($fn);
-    echo "<pre>"."\n<br>";
+    if ($fn) {
+      echo "<pre>";
+      var_dump($fn);
+      echo "<pre>"."\n<br>";
+    } else {
+      echo "404: Page not found!";
+    }
   }
 }
 
