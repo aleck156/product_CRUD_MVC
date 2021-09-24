@@ -5,6 +5,12 @@ namespace app;
 class Router{
   public array $getRoutes = [];
   public array $postRoutes = [];
+  public Database $db;
+
+  public function __construct()
+  {
+    $this->db = new Database() ;
+  }
 
   public function get($url, $fn){
     $this->getRoutes[$url] = $fn;
