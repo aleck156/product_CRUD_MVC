@@ -16,21 +16,19 @@ class Router{
 
   public function resolve(){
     $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
-    $method = $_SERVER['REQUEST_METHOD'];
+    $method = strtolower($_SERVER['REQUEST_METHOD']);
 
-    if ($method === 'GET'){
+    if ($method === 'get'){
       $fn = $this->getRoutes[$currentUrl] ?? null;
     } else {
       $fn = $this->postRoutes[$currentUrl] ?? null;
     }
 
-    if ($fn) {
-      echo "<pre>";
-      var_dump($fn);
-      echo "<pre>"."\n<br>";
-    } else {
+    if (!$fn) {
       echo "404: Page not found!";
+      exit;
     }
+    call_user_func($fn);
   }
 }
 
