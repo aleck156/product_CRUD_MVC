@@ -30,6 +30,11 @@ class Router{
     }
     call_user_func($fn);
   }
+
+  public function renderView($view)
+  {
+    include_once __DIR__."/views/$view.php";
+  }
 }
 
 
