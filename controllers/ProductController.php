@@ -12,11 +12,11 @@ class ProductController {
     return $router->renderView('products/create');
   }
 
-  public function update(){
-    echo "Update page";
+  public function update(Router $router){
+    return $router->renderView('products/update');
   }
 
-  public function delete(){
+  public function delete(Router $router){
     echo "Delete page";
   }
 }
