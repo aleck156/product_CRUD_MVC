@@ -39,6 +39,10 @@ class Router{
 
   public function renderView($view, $params = [])
   {
+    foreach ($params as $key => $value) {
+      $$key = $value;
+    }
+
     ob_start(); // start caching of the output, saved in a local buffer
     include_once __DIR__."/views/$view.php";
     $content = ob_get_clean();
