@@ -5,7 +5,8 @@ use app\controllers\ProductController;
 use app\Router;
 
 require_once __DIR__."/../vendor/autoload.php";
-$router = new Router();
+$database = new \app\Database();
+$router = new Router($database);
 
 $router->get('/', [new ProductController(), 'index']);
 $router->get('/products', [new ProductController(), 'index']);

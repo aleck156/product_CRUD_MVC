@@ -5,11 +5,11 @@ namespace app;
 class Router{
   public array $getRoutes = [];
   public array $postRoutes = [];
-  public Database $db;
+  public ?Database $db = null;
 
-  public function __construct()
+  public function __construct(Database $database)
   {
-    $this->db = new Database() ;
+    $this->db = $database;
   }
 
   public function get($url, $fn){
@@ -37,7 +37,7 @@ class Router{
     call_user_func($fn, $this);
   }
 
-  public function renderView($view)
+  public function renderView($view, $params = [])
   {
     ob_start(); // start caching of the output, saved in a local buffer
     include_once __DIR__."/views/$view.php";

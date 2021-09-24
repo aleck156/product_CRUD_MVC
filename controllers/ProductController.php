@@ -5,7 +5,10 @@ use app\Router;
 
 class ProductController {
   public function index(Router $router){
-    return $router->renderView('products/index');
+    $products = $router->db->getProducts();    
+    return $router->renderView('products/index',[
+      'products' => $products
+    ]);
   }
 
   public function create(Router $router){

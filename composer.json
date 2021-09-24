@@ -12,5 +12,8 @@
       "email": "aleck156@gmail.com"
     }
   ],
-  "require": {}
+  "require": {
+    "ext-pdo_sqlite": "*",
+    "doctrine/dbal": "^3.1"
+  }
 }

@@ -2,7 +2,7 @@
 
 namespace app;
 
-use PDO;
+use \PDO;
 class Database {
 
   public \PDO $pdo;
