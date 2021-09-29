@@ -15,7 +15,19 @@ class ProductController {
   }
 
   public function create(Router $router){
-    return $router->renderView('products/create');
+    $errors = [];
+
+    $product = [
+      'title' => '',
+      'description' => '',
+      'image' => '',
+      'price' => 0.00
+    ];
+
+    return $router->renderView('products/create', [
+      'product' => $product,
+      'error' => $errors
+    ]);
   }
 
   public function update(Router $router){
