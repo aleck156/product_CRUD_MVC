@@ -9,7 +9,8 @@ class ProductController {
 
     $products = $router->db->getProducts($search);
     return $router->renderView('products/index',[
-      'products' => $products
+      'products' => $products,
+      'search' => $search
     ]);
   }
 
