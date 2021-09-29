@@ -1,7 +1,7 @@
 <h1>Product list</h1>
 
 <p>
-      <a href="/products/create.php" class='btn btn-success'>Create New Product</a>
+      <a href="/products/create" class='btn btn-success'>Create New Product</a>
     </p>
 
     <form>
@@ -9,7 +9,7 @@
         <input type="text" class="form-control" placeholder="Search for products ..." name="search" id='search'
           value="<?php echo $search; ?>">
 
-        <a href='./index.php'>
+        <a href='/'>
           <button class="btn btn-outline-secondary" type="button" id='resetSearch'>
             <i class="bi bi-backspace-fill"></i>
           </button>
