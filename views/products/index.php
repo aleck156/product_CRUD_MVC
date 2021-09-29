@@ -6,8 +6,13 @@
 
     <form>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search for products ..." name="search"
+        <input type="text" class="form-control" placeholder="Search for products ..." name="search" id='search'
           value="<?php echo $search; ?>">
+
+        <button class="btn btn-outline-secondary" type="button" id='resetSearch'>
+          <i class="bi bi-backspace-fill"></i>
+        </button>
+
         <button class="btn btn-outline-secondary" type="submit">
           <i class="bi bi-search"></i>
         </button>
@@ -32,7 +37,7 @@
                 <th scope="row"><?php echo $i+1 ?></th>
                 <td><?php echo $product['id'] ?></td>
                 <td>
-                  <img src="../<?php echo $product['image'] ?>" alt="" class='thumb-image'>
+                  <img src="<?php echo $product['image'] ?>" alt="" class='thumb-image'>
                 </td>
                 <td><?php echo $product['title'] ?></td>
                 <td><?php echo $product['price'] ?></td>
@@ -48,3 +53,12 @@
             <?php endforeach; ?>
       </tbody>
     </table>
+    <script>
+      let resetSearch = document.getElementById('resetSearch');
+      let search = document.getElementById('search');
+
+      resetSearch.addEventListener("click", function () {
+        search.value = '';
+        <?php header('url=index.php') ?>
+        })
+    </script>
