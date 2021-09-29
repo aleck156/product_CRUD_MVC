@@ -9,9 +9,11 @@
         <input type="text" class="form-control" placeholder="Search for products ..." name="search" id='search'
           value="<?php echo $search; ?>">
 
-        <button class="btn btn-outline-secondary" type="button" id='resetSearch'>
-          <i class="bi bi-backspace-fill"></i>
-        </button>
+        <a href='./index.php'>
+          <button class="btn btn-outline-secondary" type="button" id='resetSearch'>
+            <i class="bi bi-backspace-fill"></i>
+          </button>
+        </a>
 
         <button class="btn btn-outline-secondary" type="submit">
           <i class="bi bi-search"></i>
