@@ -5,7 +5,9 @@ use app\Router;
 
 class ProductController {
   public function index(Router $router){
-    $products = $router->db->getProducts();    
+    $search = $_GET['search'] ?? '';
+
+    $products = $router->db->getProducts($search);
     return $router->renderView('products/index',[
       'products' => $products
     ]);
