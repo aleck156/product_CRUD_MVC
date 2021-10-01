@@ -1,6 +1,8 @@
 <?php
 
 namespace app\controllers;
+
+use app\models\Product;
 use app\Router;
 
 class ProductController {
@@ -29,6 +31,9 @@ class ProductController {
       $productData['description'] = $_POST['description'];
       $productData['price'] = $_POST['price'];
       $productData['imageFile'] = $_FILES['image'] ?? null;
+
+      $product = new Product();
+      $product->load($productData);
     }
 
     return $router->renderView('products/create', [
