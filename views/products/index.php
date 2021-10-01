@@ -39,7 +39,9 @@
                 <th scope="row"><?php echo $i+1 ?></th>
                 <td><?php echo $product['id'] ?></td>
                 <td>
-                  <img src="<?php echo $product['image'] ?>" alt="" class='thumb-image'>
+                  <?php if($product['image']): ?>
+                    <img src="<?php echo $product['image'] ?>" alt="" class='thumb-image'>
+                  <?php endif ?>
                 </td>
                 <td><?php echo $product['title'] ?></td>
                 <td><?php echo $product['price'] ?></td>
