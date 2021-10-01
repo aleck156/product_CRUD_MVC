@@ -20,6 +20,10 @@ class Product {
     $this->imagePath = $data['image'] ?? null;
   }
   
+  public function save(){
+    $errors = [];
+  }
+
 }
 
 
