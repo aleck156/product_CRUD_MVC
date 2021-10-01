@@ -48,6 +48,12 @@ class Product {
       }
 
       $db = Database::$db;
+      if ($this->id){
+        $db->updateProduct($this);
+      } else {
+        $db->createProduct($this);
+      }
+
     }
     return $errors;
   }
