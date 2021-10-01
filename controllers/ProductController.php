@@ -17,7 +17,7 @@ class ProductController {
   public function create(Router $router){
     $errors = [];
 
-    $product = [
+    $productData = [
       'title' => '',
       'description' => '',
       'image' => '',
@@ -25,11 +25,15 @@ class ProductController {
     ];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-      
+      $productData['title'] = $_POST['title'];
+      $productData['title'] = $_POST['title'];
+      $productData['title'] = $_POST['title'];
+      $productData['title'] = $_POST['title'];
+      $productData['title'] = $_POST['title'];
     }
 
     return $router->renderView('products/create', [
-      'product' => $product,
+      'product' => $productData,
       'error' => $errors
     ]);
   }
