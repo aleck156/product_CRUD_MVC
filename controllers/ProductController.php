@@ -34,9 +34,11 @@ class ProductController {
 
       $product = new Product();
       $product->load($productData);
-      $product->save();
-      header('Location: /products');
-      exit;
+      $errors = $product->save();
+      if (empty($errors)) {
+        header('Location: /products');
+        exit;
+      }
     }
 
     return $router->renderView('products/create', [
