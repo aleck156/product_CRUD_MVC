@@ -3,6 +3,7 @@
 namespace app;
 
 use \PDO;
+use app\models\Product;
 class Database {
 
   public \PDO $pdo;
@@ -22,6 +23,17 @@ class Database {
     }
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function createProduct(Product $product){
+    $statement = $this->pdo->prepare("INSERT INTO products (title, image, description, price, create_date)
+                VALUES (:title, :image, :description, :price, :create_date)");
+    $statement->bindValue(':title', $product->title);
+    $statement->bindValue(':image', $product->imagePath);
+    $statement->bindValue(':description', $product->description);
+    $statement->bindValue(':price', $product->price);
+    $statement->bindValue(':date', date('Ym-d H:i:s'));
+    $statement->execute();
   }
 }
 
