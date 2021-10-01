@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\Database;
+use app\helpers\UtilHelper;
 
 // mapping of a class into a database product
 class Product {
@@ -42,7 +43,7 @@ class Product {
           unlink(__DIR__.'/../public/'.$this->imagePath);
         }
 
-        $this->imagePath = 'images/'.randomString(8).'/'.$this->imageFile;
+        $this->imagePath = 'images/'.UtilHelper::randomString(8).'/'.$this->imageFile;
         mkdir(dirname(__DIR__.'/../public/'.$this->imagePath));
         move_uploaded_file($this->imageFile['tmp_name'], __DIR__.'/../public/'.$this->imagePath);
       }
