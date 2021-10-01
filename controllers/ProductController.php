@@ -24,6 +24,10 @@ class ProductController {
       'price' => 0.00
     ];
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+      
+    }
+
     return $router->renderView('products/create', [
       'product' => $product,
       'error' => $errors
