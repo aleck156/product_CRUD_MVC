@@ -26,10 +26,9 @@ class ProductController {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
       $productData['title'] = $_POST['title'];
-      $productData['title'] = $_POST['title'];
-      $productData['title'] = $_POST['title'];
-      $productData['title'] = $_POST['title'];
-      $productData['title'] = $_POST['title'];
+      $productData['description'] = $_POST['description'];
+      $productData['price'] = $_POST['price'];
+      $productData['imageFile'] = $_FILES['image'] ?? null;
     }
 
     return $router->renderView('products/create', [
