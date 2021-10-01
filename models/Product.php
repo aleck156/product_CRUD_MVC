@@ -22,6 +22,18 @@ class Product {
   
   public function save(){
     $errors = [];
+    if (!$this->title){
+      $errors[] = "Product title is required!";
+    }
+
+    if (!$this->price) {
+      $errors[] = "Product price is required";
+    }
+
+    if (!is_dir(__DIR__.'/../public/images')){
+      mkdir(__DIR__.'/../public/images');
+    }
+
   }
 
 }
