@@ -45,6 +45,7 @@ class Product {
         move_uploaded_file($this->imageFile['tmp_name'], __DIR__.'/../public/'.$this->imagePath);
       }
     }
+    return $errors;
   }
 
 }
