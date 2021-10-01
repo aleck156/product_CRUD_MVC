@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\Database;
+
 // mapping of a class into a database product
 class Product {
   public ?int $id = null;
@@ -44,6 +46,8 @@ class Product {
         mkdir(dirname(__DIR__.'/../public/'.$this->imagePath));
         move_uploaded_file($this->imageFile['tmp_name'], __DIR__.'/../public/'.$this->imagePath);
       }
+
+      $db = Database::$db;
     }
     return $errors;
   }
