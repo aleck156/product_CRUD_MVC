@@ -34,7 +34,7 @@ class Database {
     $statement->bindValue(':image', $product->imagePath);
     $statement->bindValue(':description', $product->description);
     $statement->bindValue(':price', $product->price);
-    $statement->bindValue(':date', date('Ym-d H:i:s'));
+    $statement->bindValue(':create_date', date('Y-m-d H:i:s'));
     $statement->execute();
   }
 }
