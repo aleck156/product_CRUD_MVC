@@ -58,7 +58,8 @@ class ProductController {
       exit;
     }
     $router->db->deleteProduct($id);
-    echo "Delete page";
+    header("Location: /products");
+    exit;
   }
 }
 
