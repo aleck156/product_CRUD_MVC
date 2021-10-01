@@ -48,7 +48,16 @@ class ProductController {
   }
 
   public function update(Router $router){
-    return $router->renderView('products/update');
+    $id = $_GET['id'] ?? null;
+    if (!$id){
+      header("Location: /products");
+      exit;
+    }
+    $productData = $router->db->getProductById($id);
+
+    return $router->renderView('products/update', [
+      'product' => $productData
+    ]);
   }
 
   public function delete(Router $router){
