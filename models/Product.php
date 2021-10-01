@@ -34,6 +34,17 @@ class Product {
       mkdir(__DIR__.'/../public/images');
     }
 
+    if (empty($errors)){
+      if ($this->imageFile && $this->imageFile['tmp_name']){
+        if ($this->imagePath){
+          unlink(__DIR__.'/../public/'.$this->imagePath);
+        }
+
+        $this->imagePath = 'images/'.randomString(8).'/'.$this->imageFile;
+        mkdir(dirname(__DIR__.'/../public/'.$this->imagePath));
+        move_uploaded_file($this->imageFile['tmp_name'], __DIR__.'/../public/'.$this->imagePath);
+      }
+    }
   }
 
 }
