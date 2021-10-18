@@ -71,7 +71,8 @@ class ProductController {
     }
 
     return $router->renderView('products/update', [
-      'product' => $productData
+      'product' => $productData,
+      'errors' => $errors
     ]);
   }
 
