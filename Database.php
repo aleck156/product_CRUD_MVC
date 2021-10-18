@@ -48,7 +48,7 @@ class Database {
     $statement = $this->pdo->prepare('SELECT * FROM products WHERE id = :id');
     $statement->bindValue(':id', $id);
     $statement->execute();
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $statement->fetch(PDO::FETCH_ASSOC);
   }
 }
 
