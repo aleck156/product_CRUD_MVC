@@ -53,6 +53,7 @@ class ProductController {
       header("Location: /products");
       exit;
     }
+    $errors = [];
     $productData = $router->db->getProductById($id);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
