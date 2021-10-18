@@ -50,6 +50,10 @@ class Database {
     $statement->execute();
     return $statement->fetch(PDO::FETCH_ASSOC);
   }
+
+  public function updateProduct(Product $product){
+    
+  }
 }
 
 ?>
