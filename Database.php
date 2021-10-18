@@ -52,7 +52,13 @@ class Database {
   }
 
   public function updateProduct(Product $product){
-    
+    $statement = $this->pdo->prepare("UPDATE products SET title = :title, 
+                image = :image, description =: description, price = :price WHERE id = :id");
+    $statement->bindValue(':title', $product->title);
+    $statement->bindValue(':image', $product->imagePath);
+    $statement->bindValue(':description', $product->description);
+    $statement->bindValue(':price', $product->price);
+    $statement->execute()
   }
 }
 
